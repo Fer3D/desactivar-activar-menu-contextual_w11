@@ -1,5 +1,9 @@
 # Script para Gestionar el Menú Contextual de Windows 11
 
+![1](https://github.com/user-attachments/assets/d1777654-cf20-49bd-a917-bde8d0ca5e0f)
+
+![2](https://github.com/user-attachments/assets/0efcae95-69bf-4fee-a0b3-c50478518922)
+
 Este script en formato `.bat` te permite comprobar si el nuevo menú contextual de Windows 11 está activado o desactivado, y te da la opción de cambiar su estado o salir de manera inmediata.
 
 ## Instrucciones

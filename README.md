@@ -22,7 +22,7 @@ Script `.bat` que muestra si usas el menú **nuevo de Windows 11** o el menú **
 
 El script **no desactiva** el menú contextual: solo cambia entre el estilo nuevo y el clásico.
 
-## Cómo funciona (resumen)
+## Cómo funciona
 
 Cambia una entrada del registro de Windows de tu usuario:
 

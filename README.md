@@ -1,49 +1,41 @@
-# Script para Gestionar el Menú Contextual de Windows 11
+# Alternar menú contextual clásico / Windows 11
 
-![1](https://github.com/user-attachments/assets/d1777654-cf20-49bd-a917-bde8d0ca5e0f)
+Script `.bat` que muestra si usas el menú **nuevo de Windows 11** o el menú **clásico** (estilo Windows 10) y te deja cambiar entre ambos.
 
-![2](https://github.com/user-attachments/assets/0efcae95-69bf-4fee-a0b3-c50478518922)
+![Menú nuevo de Windows 11](https://github.com/user-attachments/assets/d1777654-cf20-49bd-a917-bde8d0ca5e0f)
 
-Este script en formato `.bat` te permite comprobar si el nuevo menú contextual de Windows 11 está activado o desactivado, y te da la opción de cambiar su estado o salir de manera inmediata.
+![Menú clásico](https://github.com/user-attachments/assets/0efcae95-69bf-4fee-a0b3-c50478518922)
 
-## Instrucciones
+## Uso rápido
 
-1. **Descargar y ejecutar el script**: Guarda el contenido del script en un archivo con la extensión `.bat`. Luego ejecútalo con privilegios de administrador para aplicar los cambios al registro de Windows.
+1. Descarga o clona el repo y ejecuta `menu-contextual_w11.bat` (doble clic basta; **no hace falta administrador**).
+2. El script indica el estado actual.
+3. Escribe `1` y pulsa `Enter` para cambiar. Cualquier otra entrada + `Enter` sale sin tocar nada.
+4. Si cambias: se reinicia el Explorador y la ventana se cierra a los ~10 segundos.
 
-2. **Opciones disponibles**:
-   - **Cambiar el estado del menú contextual**: Al ejecutar el script, verás una opción que te permite cambiar el estado del menú contextual de Windows 11 escribiendo `1` y presionando `Enter`.
-     - Si está activado, lo desactivará.
-     - Si está desactivado, lo activará.
-     - Después de realizar el cambio, el Explorador de Windows se reiniciará para aplicar los cambios y el script se cerrará automáticamente después de 10 segundos.
-   
-   - **Salir del script**: Si escribes `2` o cualquier otra tecla, el script mostrará un mensaje de salida y se cerrará de inmediato.
+## Qué significa cada estado
 
-## Cómo funciona
+| Mensaje del script | Qué ves al clic derecho |
+|---|---|
+| Menú de Windows 11 **ACTIVADO** | Menú nuevo (compacto) de Windows 11 |
+| Menú de Windows 11 **DESACTIVADO** | Menú clásico completo (estilo Windows 10) |
 
-El script realiza los siguientes pasos:
+El script **no desactiva** el menú contextual: solo cambia entre el estilo nuevo y el clásico.
 
-1. **Comprobación del estado actual**:
-   - Utiliza el comando `reg query` para verificar si la clave del registro que controla el menú contextual de Windows 11 existe.
-   - Si la clave existe, indica que el menú contextual está desactivado.
-   - Si la clave no existe, indica que el menú contextual está activado.
+## Cómo funciona (resumen)
 
-2. **Cambio de estado**:
-   - Si eliges cambiar el estado, el script añade o elimina la clave del registro correspondiente:
-     - Para desactivar el menú contextual: añade la clave del registro.
-     - Para activar el menú contextual: elimina la clave del registro.
-   
-3. **Reinicio del Explorador de Windows**:
-   - El script reinicia automáticamente el proceso del Explorador de Windows (`explorer.exe`) para aplicar los cambios inmediatamente.
+Cambia una entrada del registro de Windows de tu usuario:
 
-4. **Cierre del script**:
-   - Si se realiza un cambio, el script espera 10 segundos antes de cerrarse.
-   - Si eliges salir sin cambiar nada, el script se cierra de inmediato.
+- Si la entrada existe: menú clásico
+- Si no existe: menú nuevo de Windows 11
+
+Tras el cambio, reinicia el Explorador de archivos para aplicar al momento.
 
 ## Requisitos
 
-- **Windows 11**: Este script está diseñado para trabajar en Windows 11 y modificar el comportamiento del menú contextual.
-- **Privilegios de administrador**: Para modificar el registro y reiniciar el Explorador de Windows, se necesitan permisos de administrador.
+- Windows 11
+- Tu cuenta de usuario (no hace falta iniciar como administrador)
 
 ## Advertencia
 
-Modificar el registro de Windows puede causar problemas si no se realiza correctamente. Asegúrate de entender los cambios antes de ejecutarlos y, si es posible, realiza una copia de seguridad de tu registro.
+Editar el registro puede dar problemas si se hace mal. Este script solo añade o borra esa clave concreta; aun así, conviene saber qué estás cambiando.
